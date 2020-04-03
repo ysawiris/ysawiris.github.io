@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Antonius</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" href="unname.jpg">
+    <!-- Imported Styles  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Your Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Caption text */
+        
+        .text {
+            background-color: lavender;
+            color: black;
+            font-size: 5vw;
+            /* Responsive font size */
+            font-weight: bold;
+            margin: 0 auto;
+            /* Center the text container */
+            padding: 10px;
+            width: 50%;
+            text-align: center;
+            /* Center text */
+            position: absolute;
+            /* Position text */
+            top: 50%;
+            /* Position text in the middle */
+            left: 50%;
+            /* Position text in the middle */
+            transform: translate(-50%, -50%);
+            /* Position text in the middle */
+            mix-blend-mode: screen;
+            /* This makes the cutout text possible */
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home">Home</a>
+        <a href="#news">Live Stream</a>
+        <a href="#contact">Services</a>
+        <a href="#about">Aghapy Store</a>
+        <a href="#about">CYC</a>
+        <a href="#about">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div> -->
+
+
+    <div class="container">
+        <div id="a" class="a" style="height: fit-content;">
+            <!-- <h1 data-aos="fade-down" data-aos-duration="2000">SlideShow</h1> -->
+            <div class="slideshow-container" style="height: 100%;">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="slide1.jpg" style="width:100%">
+                    <div class="text">WELCOME</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="slide1.jpg" style="width:100%">
+                    <div class="text">TO</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="slide1.jpg" style="width:100%">
+                    <div class="text">Saint Antonius</div>
+                </div>
+                <!-- <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div> -->
+
+            </div>
+
+        </div>
+        <div id="b" class="b parallax">
+            <h1 style="width: 100%; text-align: center;">Serving the San Francisco Bay Area</h1>
+            <div class="cards">
+                <div class="card" data-aos="fade-up" data-aos-duration="3000">
+                    <img src="main.jpg" alt="John" style="width:100%">
+                    <h1>CIS</h1>
+                    <p class="title">Showing Christ through sports!</p>
+                    <p>Plays every Sunday</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><button>Learn More</button></p>
+                </div>
+
+                <div class="card" data-aos="fade-right" data-aos-duration="3000">
+                    <img src="main.jpg" alt="John" style="width:100%">
+                    <h1>Sunday School</h1>
+                    <p class="title">Educating Our Youth!</p>
+                    <p>Meets every Sunday</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><button>Learn More</button></p>
+                </div>
+
+                <div class="card" data-aos="fade-left" data-aos-duration="3000">
+                    <img src="main.jpg" alt="John" style="width:100%">
+                    <h1>CYC</h1>
+                    <p class="title">Coptic Youth Center</p>
+                    <p>A space for Our youth and you!</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><button>Learn More</button></p>
+                </div>
+
+                <div class="card" data-aos="fade-down" data-aos-duration="3000">
+                    <img src="main.jpg" alt="John" style="width:100%">
+                    <h1>Bible Study</h1>
+                    <p class="title">Youth Meetings</p>
+                    <p>Meets Every Friday</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><button>Learn More</button></p>
+                </div>
+            </div>
+            <!-- <h1 data-aos="fade-down " data-aos-duration="2000 ">Aghapy Store</h1>
+            <h1 data-aos="fade-left " data-aos-duration="2000 ">CYC</h1> -->
+
+        </div>
+        <div id="c" class="c">
+            <div class="about-section">
+                <h1>About Us</h1>
+                <p>Some text about who we are and what we do.</p>
+            </div>
+
+            <h2 style="text-align:center">Our Team</h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card" data-aos="fade-right" data-aos-duration="2000">
+                        <img src="images (3).jpeg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Jane Doe</h2>
+                            <p class="title">CEO & Founder</p>
+                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                            <p>jane@example.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card" data-aos="fade-up" data-aos-duration="2000">
+                        <img src="images (2).jpeg" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Mike Ross</h2>
+                            <p class="title">CYC Director</p>
+                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                            <p>mike@example.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="images (1).jpeg" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>John Doe</h2>
+                            <p class="title">Designer</p>
+                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                            <p>john@example.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="d" class="d parallax ">
+            <h1 data-aos="fade-left" data-aos-duration="2000">CYC</h1>
+            <iframe src="https://calendar.google.com/calendar/embed?src=jd3lhn88g12glngjnek1f8ikks%40group.calendar.google.com&amp;ctz=America/Los_Angeles " style="border: 0 " width="800 " height="600 " frameborder="0 " scrolling="no "></iframe>
+        </div>
+        <div id="e" class="e">
+            <h1 data-aos="fade-down" data-aos-duration="2000">Location</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.0084947434843!2d-122.05864994950895!3d37.67250817967899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f9395f16abc6d%3A0x72ef44b41e1056ce!2sSt%20Antonius%20Coptic%20Orthodox%20Church!5e0!3m2!1sen!2sus!4v1583209874829!5m2!1sen!2sus "
+                width="600 " height="450 " frameborder="0 " style="border:0; " allowfullscreen=" "></iframe>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="#a ">HOME</a>
+        <a href="#b ">SERVICES</a>
+        <a href="#c ">ABOUT</a>
+        <a href="#d ">CYC</a>
+        <a href="#e ">LOCATION</a>
+    </div>
+
+    <!-- ***** Imported Scripts ***** -->
+
+    <!-- Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="/smoothscroll.js"></script>
+
+    <!-- ***** Your Scripts ***** -->
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            // var dots = document.getElementsByClassName("dot ");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none ";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            // for (i = 0; i < dots.length; i++) {
+            //     dots[i].className = dots[i].className.replace(" active ", " ");
+            // }
+            slides[slideIndex - 1].style.display = "block";
+            // dots[slideIndex - 1].className += " active ";
+            setTimeout(showSlides, 2000); // Change image every 5 seconds
+        }
+        // --------------------------------------------
+        // Initialize Animate On Scroll
+        AOS.init();
+
+        // --------------------------------------------
+        // Waypoints
+
+        ['home', 'b', 'c', 'd', 'e'].forEach(function(id) {
+            new Waypoint({
+                element: document.getElementById(id),
+                handler: function() {
+                    selectNav('#' + id)
+                }
+            })
+        })
+
+
+        // -------------------------------------------
+        // Show the selected nav link
+
+        function selectNav(id) {
+            const navLinks = document.querySelectorAll('.nav-bar > a')
+            navLinks.forEach(function(link) {
+                if (link.getAttribute('href') === id) {
+                    link.classList.add('selected')
+                } else {
+                    link.classList.remove('selected')
+                }
+            })
+        }
+
+        // -------------------------------------------
+        // Scroll to Smooth
+
+        // Get a reference to the body
+        const body = document.querySelector('body')
+            // Listen for clicks
+        body.addEventListener('click', function(e) {
+            console.log(e.target)
+
+            // If a link has external class ignore it
+            if (e.target.matches('.external')) {
+                return
+            }
+
+            // Prevent the default behavior
+            e.preventDefault()
+
+            // Prepare to scroll
+            // Get the href from the target
+            const href = e.target.closest('a').href
+            if (href) {
+                // Select the current link
+                selectNav(href)
+                    // Scroll to the id that matches the href
+                const id = href.split('#')[1]
+                document.getElementById(id).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        })
+
+        /* Toggle between adding and removing the "responsive " class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
