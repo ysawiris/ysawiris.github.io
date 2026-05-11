@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 interface Project {
   name: string;
-  url: string;
+  url?: string;
   meta: string;
   description: string;
   tags: string[];
@@ -11,46 +11,58 @@ interface Project {
 
 const featured: Project[] = [
   {
+    name: "2cm",
+    url: "https://2cm.ai",
+    meta: "Next.js · PostgreSQL · SaaS",
+    description:
+      "Multi-tenant SaaS for countertop fabrication businesses. Canvas-based design tools, configurable pricing engine, customer quote portals, Stripe billing, voice/AI integration. Built with a small team.",
+    tags: ["saas", "next.js", "postgres", "stripe"],
+  },
+  {
     name: "flowagent",
-    url: "https://github.com/ysawiris/flowagent",
     meta: "TypeScript · Workflow builder",
-    description: "Visual workflow builder with a dashboard for managing customer-facing automations.",
+    description:
+      "Visual workflow builder with a dashboard for managing customer-facing automations.",
     tags: ["agents", "react", "typescript"],
   },
   {
     name: "math-platform",
-    url: "https://github.com/ysawiris/math-platform",
     meta: "Education · Web",
-    description: "Tools and practice surfaces designed for 6th grade math instruction.",
+    description:
+      "Tools and practice surfaces designed for 6th grade math instruction.",
     tags: ["education", "math", "web"],
   },
   {
     name: "ai-teacher",
-    url: "https://github.com/ysawiris/ai-teacher",
     meta: "Python · LLM",
-    description: "Experimental AI tutoring assistant that scaffolds math problems for students.",
+    description:
+      "Experimental AI tutoring assistant that scaffolds math problems for students.",
     tags: ["llm", "education", "python"],
   },
   {
     name: "sf-permit-agent",
-    url: "https://github.com/ysawiris/sf-permit-agent",
     meta: "Python · LLM agent",
-    description: "Agent that helps navigate San Francisco's permit application process end-to-end.",
+    description:
+      "Agent that helps navigate San Francisco's permit application process end-to-end.",
     tags: ["agents", "python", "civic"],
   },
   {
     name: "kordon",
-    url: "https://github.com/ysawiris/kordon",
     meta: "TypeScript",
-    description: "In-development project — see the repo for current state.",
+    description: "In-development project.",
     tags: ["typescript"],
   },
   {
     name: "paper-trader",
-    url: "https://github.com/ysawiris/paper-trader",
     meta: "Trading simulator",
     description: "Paper trading sandbox for experimenting with strategies risk-free.",
     tags: ["finance", "tooling"],
+  },
+  {
+    name: "local-news-agent",
+    meta: "Python · Agent",
+    description: "Agent that surfaces and summarizes local news.",
+    tags: ["agents", "python"],
   },
   {
     name: "satellite-tracker",
@@ -58,13 +70,6 @@ const featured: Project[] = [
     meta: "Web · Visualization",
     description: "Real-time satellite tracking visualization.",
     tags: ["web", "visualization"],
-  },
-  {
-    name: "local-news-agent",
-    url: "https://github.com/ysawiris/local-news-agent",
-    meta: "Python · Agent",
-    description: "Agent that surfaces and summarizes local news.",
-    tags: ["agents", "python"],
   },
   {
     name: "queued-up",
@@ -93,7 +98,7 @@ const featured: Project[] = [
   <div class="cards">
     {featured.map((p) => (
       <div class="card">
-        <h3><a href={p.url}>{p.name}</a></h3>
+        <h3>{p.url ? <a href={p.url}>{p.name}</a> : p.name}</h3>
         <div class="meta">{p.meta}</div>
         <p>{p.description}</p>
         <div class="tags">
@@ -104,6 +109,7 @@ const featured: Project[] = [
   </div>
 
   <p style="margin-top: 2.5rem; color: var(--text-muted); font-size: 0.95rem;">
-    More on <a href="https://github.com/ysawiris">GitHub</a>.
+    Some projects above are private or commercial work and aren't linked.
+    Public repos live on <a href="https://github.com/ysawiris">GitHub</a>.
   </p>
 </BaseLayout>
