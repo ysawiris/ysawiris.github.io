@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Project {
+  name: string;
+  url: string;
+  meta: string;
+  description: string;
+  tags: string[];
+}
+
+const featured: Project[] = [
+  {
+    name: "markquote",
+    url: "https://github.com/ysawiris/markquote",
+    meta: "TypeScript · Next.js",
+    description: "Web tool for capturing, formatting, and sharing quoted passages with attribution.",
+    tags: ["web", "typescript", "next.js"],
+  },
+  {
+    name: "flowagent",
+    url: "https://github.com/ysawiris/flowagent",
+    meta: "TypeScript · Workflow builder",
+    description: "Visual workflow builder with a dashboard for managing customer-facing automations.",
+    tags: ["agents", "react", "typescript"],
+  },
+  {
+    name: "math-platform",
+    url: "https://github.com/ysawiris/math-platform",
+    meta: "Education · Web",
+    description: "Tools and practice surfaces designed for 6th grade math instruction.",
+    tags: ["education", "math", "web"],
+  },
+  {
+    name: "ai-teacher",
+    url: "https://github.com/ysawiris/ai-teacher",
+    meta: "Python · LLM",
+    description: "Experimental AI tutoring assistant that scaffolds math problems for students.",
+    tags: ["llm", "education", "python"],
+  },
+  {
+    name: "sf-permit-agent",
+    url: "https://github.com/ysawiris/sf-permit-agent",
+    meta: "Python · LLM agent",
+    description: "Agent that helps navigate San Francisco's permit application process end-to-end.",
+    tags: ["agents", "python", "civic"],
+  },
+  {
+    name: "kordon",
+    url: "https://github.com/ysawiris/kordon",
+    meta: "TypeScript",
+    description: "In-development project — see the repo for current state.",
+    tags: ["typescript"],
+  },
+  {
+    name: "paper-trader",
+    url: "https://github.com/ysawiris/paper-trader",
+    meta: "Trading simulator",
+    description: "Paper trading sandbox for experimenting with strategies risk-free.",
+    tags: ["finance", "tooling"],
+  },
+  {
+    name: "satellite-tracker",
+    url: "https://github.com/ysawiris/satellite-tracker",
+    meta: "Web · Visualization",
+    description: "Real-time satellite tracking visualization.",
+    tags: ["web", "visualization"],
+  },
+  {
+    name: "local-news-agent",
+    url: "https://github.com/ysawiris/local-news-agent",
+    meta: "Python · Agent",
+    description: "Agent that surfaces and summarizes local news.",
+    tags: ["agents", "python"],
+  },
+  {
+    name: "queued-up",
+    url: "https://github.com/ysawiris/queuedUp",
+    meta: "React Native · iOS/Android",
+    description: "Mobile app exploration that went through multiple iterations and platforms.",
+    tags: ["mobile", "react-native"],
+  },
+];
+---
+<BaseLayout
+  title="Engineering"
+  description="Engineering projects by Youssef Sawiris — agents, web tools, and education software."
+  wide={true}
+>
+  <section class="hero">
+    <p class="eyebrow">Engineering</p>
+    <h1>Things I've built</h1>
+    <p class="lede">
+      A working selection of side projects. Most are open source on
+      <a href="https://github.com/ysawiris">GitHub</a>. Lately the focus has been LLM agents
+      and tools that sit between code and education.
+    </p>
+  </section>
+
+  <div class="cards">
+    {featured.map((p) => (
+      <div class="card">
+        <h3><a href={p.url}>{p.name}</a></h3>
+        <div class="meta">{p.meta}</div>
+        <p>{p.description}</p>
+        <div class="tags">
+          {p.tags.map((t) => <span class="tag eng">{t}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p style="margin-top: 2.5rem; color: var(--text-muted); font-size: 0.95rem;">
+    More on <a href="https://github.com/ysawiris">GitHub</a>.
+  </p>
+</BaseLayout>

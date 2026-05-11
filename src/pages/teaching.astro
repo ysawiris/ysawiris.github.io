@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Artifact {
+  title: string;
+  meta: string;
+  description: string;
+  tags: string[];
+}
+
+const artifacts: Artifact[] = [
+  {
+    title: "Classroom Culture & Community",
+    meta: "CFA · Spring 2026",
+    description:
+      "How I'm building a 6th grade math classroom where students feel known, safe, and mathematically capable. Submitted as part of my Reach 221 coursework.",
+    tags: ["culture", "reflection", "CFA"],
+  },
+  {
+    title: "Class Profile",
+    meta: "Spring 2026",
+    description:
+      "A structured look at who my students are — strengths, growth areas, and what I'm learning about how they best learn math.",
+    tags: ["analysis", "students"],
+  },
+  {
+    title: "Heritage Tree",
+    meta: "Identity activity · Nov 2025",
+    description:
+      "An activity I designed and ran where students root their math identity in family, language, and place. Came out of my own Coptic Egyptian heritage tree.",
+    tags: ["identity", "activity"],
+  },
+  {
+    title: "Lesson Tuning",
+    meta: "Graphic organizer · 2026",
+    description:
+      "A simple structure I use to revise a lesson after teaching it: what landed, what missed, what I'd cut, what I'd amplify.",
+    tags: ["lesson design", "reflection"],
+  },
+  {
+    title: "Response to Reading",
+    meta: "Reach 221 · Weeks 1–10",
+    description:
+      "Weekly reflections on teaching readings — culturally responsive math, equity, classroom routines, formative assessment.",
+    tags: ["writing", "reflection"],
+  },
+];
+---
+<BaseLayout
+  title="Teaching"
+  description="Teaching artifacts and reflections from Youssef Sawiris — 6th grade math teacher at Lodestar in East Oakland."
+>
+  <section class="hero">
+    <p class="eyebrow">Teaching</p>
+    <h1>From the classroom</h1>
+    <p class="lede">
+      I teach 6th grade math at <strong>Lodestar</strong>, a public charter school in East Oakland.
+      I started in January 2025 and am completing my credential through the Reach Institute for
+      School Leadership. The work below is a mix of lesson design, classroom culture, and reflection.
+    </p>
+  </section>
+
+  <div class="cards">
+    {artifacts.map((a) => (
+      <div class="card">
+        <h3>{a.title}</h3>
+        <div class="meta">{a.meta}</div>
+        <p>{a.description}</p>
+        <div class="tags">
+          {a.tags.map((t) => <span class="tag edu">{t}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p style="margin-top: 2.5rem; color: var(--text-muted); font-size: 0.95rem;">
+    Some artifacts contain student information and aren't publicly linked.
+    Email me at <a href="mailto:sawirisyoussef@gmail.com">sawirisyoussef@gmail.com</a> if you'd like to see them.
+  </p>
+</BaseLayout>

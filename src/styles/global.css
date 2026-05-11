@@ -1,0 +1,299 @@
+:root {
+  --bg: #fefcf8;
+  --bg-muted: #f6f1e6;
+  --border: #e8e2d4;
+  --text: #1f1d1a;
+  --text-muted: #6b6660;
+  --accent-eng: #1b4965;
+  --accent-eng-soft: #d9e4ec;
+  --accent-edu: #c08552;
+  --accent-edu-soft: #f1e2d2;
+  --link: #1b4965;
+  --link-hover: #c08552;
+  --max-width: 760px;
+  --max-width-wide: 1040px;
+  --radius: 6px;
+  --font-serif: "Crimson Pro", "Iowan Old Style", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 2.5em; }
+h3 { font-size: 1.25rem; margin-top: 1.8em; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--link-hover); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-muted);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Header / nav */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(180%) blur(8px);
+}
+.site-header nav {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+.nav-links a:hover { color: var(--text); }
+
+/* Main */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+main.wide { max-width: var(--max-width-wide); }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 2rem;
+}
+.hero .eyebrow {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.hero p.lede {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 620px;
+}
+
+/* Two-track intro */
+.tracks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+@media (max-width: 640px) {
+  .tracks { grid-template-columns: 1fr; }
+}
+.track {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+.track:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.track h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+.track p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+.track.eng { border-left: 3px solid var(--accent-eng); }
+.track.edu { border-left: 3px solid var(--accent-edu); }
+
+/* Project / Teaching cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+.card {
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+.card h3 a {
+  text-decoration: none;
+  color: var(--text);
+}
+.card h3 a:hover { color: var(--link); }
+.card .meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 0.8rem;
+}
+.card .tags {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--bg-muted);
+  border-radius: 999px;
+  color: var(--text-muted);
+}
+.tag.eng { background: var(--accent-eng-soft); color: var(--accent-eng); }
+.tag.edu { background: var(--accent-edu-soft); color: var(--accent-edu); }
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 3rem 0 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.section-header h2 { margin: 0; }
+.section-header a {
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.section-header a:hover { text-decoration: underline; }
+
+/* CTA / actions */
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+.btn.primary {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.btn.primary:hover {
+  background: var(--accent-eng);
+  border-color: var(--accent-eng);
+  color: var(--bg);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.site-footer a { color: var(--text-muted); }
+.site-footer a:hover { color: var(--text); }
+
+/* Prose adjustments */
+.prose ul, .prose ol {
+  padding-left: 1.4em;
+}
+.prose li { margin-bottom: 0.3em; }
+.prose blockquote {
+  margin: 1.5em 0;
+  padding-left: 1em;
+  border-left: 3px solid var(--border);
+  color: var(--text-muted);
+  font-style: italic;
+}

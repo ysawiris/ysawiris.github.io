@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Home">
+  <section class="hero">
+    <p class="eyebrow">Engineer · Teacher</p>
+    <h1>Youssef Sawiris</h1>
+    <p class="lede">
+      I build software and I teach 6th grade math. Previously an engineer at Strava;
+      now in the classroom at Lodestar (East Oakland) while shipping side projects
+      that sit between code and education.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="/resume/Youssef_Sawiris_Resume_Classic.pdf">Resume (PDF)</a>
+      <a class="btn" href="mailto:sawirisyoussef@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/ysawiris">GitHub</a>
+    </div>
+  </section>
+
+  <div class="tracks">
+    <a class="track eng" href="/engineering/">
+      <h3>Engineering →</h3>
+      <p>Side projects, agents, and tools I've built. Mostly TypeScript, Python, and React.</p>
+    </a>
+    <a class="track edu" href="/teaching/">
+      <h3>Teaching →</h3>
+      <p>Classroom culture, lesson design, and reflections from my first year of teaching math.</p>
+    </a>
+  </div>
+
+  <div class="section-header">
+    <h2>Selected work</h2>
+    <a href="/engineering/">All projects →</a>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3><a href="https://github.com/ysawiris/markquote">markquote</a></h3>
+      <div class="meta">TypeScript · Next.js</div>
+      <p>Web tool for capturing, formatting, and sharing quoted passages with attribution.</p>
+      <div class="tags">
+        <span class="tag eng">web</span>
+        <span class="tag eng">typescript</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ysawiris/flowagent">flowagent</a></h3>
+      <div class="meta">TypeScript · Workflow builder</div>
+      <p>Visual workflow builder with a dashboard for managing customer-facing automations.</p>
+      <div class="tags">
+        <span class="tag eng">agents</span>
+        <span class="tag eng">react</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ysawiris/math-platform">math-platform</a></h3>
+      <div class="meta">Education · Web</div>
+      <p>Tools and practice surfaces designed for 6th grade math instruction.</p>
+      <div class="tags">
+        <span class="tag eng">education</span>
+        <span class="tag edu">math</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ysawiris/sf-permit-agent">sf-permit-agent</a></h3>
+      <div class="meta">Python · LLM agent</div>
+      <p>Agent that helps navigate San Francisco's permit application process end-to-end.</p>
+      <div class="tags">
+        <span class="tag eng">agents</span>
+        <span class="tag eng">python</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>From the classroom</h2>
+    <a href="/teaching/">All teaching →</a>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Classroom Culture &amp; Community</h3>
+      <div class="meta">Spring 2026 · CFA</div>
+      <p>How I'm building a math classroom where students feel known, safe, and capable.</p>
+      <div class="tags">
+        <span class="tag edu">culture</span>
+        <span class="tag edu">reflection</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Heritage Tree</h3>
+      <div class="meta">Identity activity · Nov 2025</div>
+      <p>A class activity rooting math identity in family, language, and place.</p>
+      <div class="tags">
+        <span class="tag edu">identity</span>
+        <span class="tag edu">activity</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Lesson Tuning</h3>
+      <div class="meta">Lesson design · 2026</div>
+      <p>Graphic organizer I use to revise lessons after teaching them — what to cut, what to amplify.</p>
+      <div class="tags">
+        <span class="tag edu">planning</span>
+        <span class="tag edu">reflection</span>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
