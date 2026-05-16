@@ -285,6 +285,106 @@ main.wide { max-width: var(--max-width-wide); }
 .site-footer a { color: var(--text-muted); }
 .site-footer a:hover { color: var(--text); }
 
+/* Live-demo CTA on cards */
+.card .demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--accent-eng);
+  text-decoration: none;
+}
+.card .demo-link:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* YouTube carousel */
+.video-carousel {
+  margin: 2rem 0 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+}
+.video-stage {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+.video-stage iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.video-controls button {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.video-controls button:hover:not(:disabled) {
+  border-color: var(--text);
+}
+.video-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.video-caption {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+.video-caption .video-title {
+  font-weight: 500;
+  font-size: 0.98rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-caption .video-counter {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.video-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem 1rem;
+}
+.video-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.video-dots button[aria-current="true"] {
+  background: var(--accent-eng);
+  border-color: var(--accent-eng);
+}
+
 /* Prose adjustments */
 .prose ul, .prose ol {
   padding-left: 1.4em;

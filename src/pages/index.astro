@@ -1,5 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const yoyoVideos = [
+  { id: "5YnG1TBW0VM", title: "Yoyo's Code Club — Deploy Your Node [v1.7]" },
+  { id: "4fTAYphJg3Y", title: "Yoyo's Code Club — AutoComplete Searchbar [v1.6]" },
+  { id: "LHS26WYENR0", title: "Yoyo's Code Club — Virtual Assistant! Debunking AI [v1.5]" },
+  { id: "WGY2Jo5z8nI", title: "Yoyo's Code Club — Let's talk socket.io! [v1.4]" },
+  { id: "CxwhXPwzuvE", title: "Yoyo's Code Show — Let's talk privacy! [v1.3]" },
+  { id: "kE3i6k4IteA", title: "Yoyo's Code Show — Let's Bootstrap! [v1.2]" },
+  { id: "PsitAWQ7iw8", title: "Yoyo's Code Show — Let's Django! [v1.1]" },
+];
 ---
 <BaseLayout title="Home">
   <section class="hero">
@@ -38,10 +48,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="card">
       <h3><a href="https://2cm.ai">2cm.ai</a></h3>
       <div class="meta">Next.js · PostgreSQL · SaaS</div>
+      <a class="demo-link" href="https://2cm.ai">Visit the site →</a>
       <p>Multi-tenant SaaS for countertop fabrication businesses — canvas-based design tools, configurable pricing engine, customer quote portals, Stripe billing.</p>
       <div class="tags">
         <span class="tag eng">saas</span>
         <span class="tag eng">next.js</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://ysawiris.github.io/satellite-tracker/">satellite-tracker</a></h3>
+      <div class="meta">JavaScript · CesiumJS</div>
+      <a class="demo-link" href="https://ysawiris.github.io/satellite-tracker/">Try the live demo →</a>
+      <p>Real-time tracker for every visible satellite over Earth — 2D map with day/night terminator, 3D globe with NASA cloud-cover composites, observer-centered sky radar, and onboard ride-along camera.</p>
+      <div class="tags">
+        <span class="tag eng">javascript</span>
+        <span class="tag eng">visualization</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="/lyric-generator/">lyric-generator</a></h3>
+      <div class="meta">JavaScript · Markov + rhyme schemes</div>
+      <a class="demo-link" href="/lyric-generator/">Try the live demo →</a>
+      <p>Generate song lyrics by artist style. Picks artists, themes, Markov order, and rhyme schemes (AABB, ABAB, ABBA, free verse). Pure client-side — runs entirely in your browser.</p>
+      <div class="tags">
+        <span class="tag eng">javascript</span>
+        <span class="tag eng">creative</span>
       </div>
     </div>
 
@@ -66,15 +99,85 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <div class="card">
-      <h3><a href="https://www.youtube.com/playlist?list=PLZ_SI6zSFXvCFiWtGFy4U3X3f1dAj9zGz">YoYo Code Club</a></h3>
+      <h3><a href="#yoyo-code-club">YoYo Code Club</a></h3>
       <div class="meta">YouTube · 2020–2021</div>
-      <p>Seven beginner Python + JavaScript video lessons I produced as senior-year CS undergrad: Django, Bootstrap, socket.io, a virtual assistant, autocomplete search, Node deployment, and online privacy.</p>
+      <a class="demo-link" href="#yoyo-code-club">Watch the episodes ↓</a>
+      <p>Seven beginner Python + JavaScript video lessons I produced as a senior CS undergrad: Django, Bootstrap, socket.io, a virtual assistant, autocomplete search, Node deployment, online privacy.</p>
       <div class="tags">
         <span class="tag edu">teaching</span>
         <span class="tag eng">video</span>
       </div>
     </div>
   </div>
+
+  <div class="section-header" id="yoyo-code-club">
+    <h2>Watch — YoYo Code Club</h2>
+    <a href="https://www.youtube.com/@learn-with-yoyo">On YouTube →</a>
+  </div>
+  <p style="color: var(--text-muted); margin-top: 0.5rem;">
+    Beginner Python and JavaScript lessons I made during my senior year of CS undergrad
+    (@learn-with-yoyo). Seven episodes.
+  </p>
+
+  <section class="video-carousel" aria-label="YoYo Code Club episodes">
+    <div class="video-stage">
+      <iframe
+        id="yoyo-iframe"
+        src={`https://www.youtube-nocookie.com/embed/${yoyoVideos[0].id}`}
+        title={yoyoVideos[0].title}
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <div class="video-controls">
+      <button type="button" id="yoyo-prev" aria-label="Previous episode">←</button>
+      <div class="video-caption">
+        <span class="video-title" id="yoyo-title">{yoyoVideos[0].title}</span>
+        <span class="video-counter"><span id="yoyo-pos">1</span> / {yoyoVideos.length}</span>
+      </div>
+      <button type="button" id="yoyo-next" aria-label="Next episode">→</button>
+    </div>
+    <div class="video-dots" id="yoyo-dots">
+      {yoyoVideos.map((v, i) => (
+        <button
+          type="button"
+          data-index={i}
+          aria-label={`Episode ${i + 1}`}
+          aria-current={i === 0 ? "true" : "false"}
+        ></button>
+      ))}
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ yoyoVideos }}>
+    (function () {
+      const iframe = document.getElementById("yoyo-iframe");
+      const title = document.getElementById("yoyo-title");
+      const pos = document.getElementById("yoyo-pos");
+      const prev = document.getElementById("yoyo-prev");
+      const next = document.getElementById("yoyo-next");
+      const dotsEl = document.getElementById("yoyo-dots");
+      const dots = Array.from(dotsEl.querySelectorAll("button"));
+      let i = 0;
+
+      function show(n) {
+        i = (n + yoyoVideos.length) % yoyoVideos.length;
+        const v = yoyoVideos[i];
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + v.id;
+        iframe.title = v.title;
+        title.textContent = v.title;
+        pos.textContent = String(i + 1);
+        dots.forEach((d, idx) => d.setAttribute("aria-current", idx === i ? "true" : "false"));
+      }
+
+      prev.addEventListener("click", () => show(i - 1));
+      next.addEventListener("click", () => show(i + 1));
+      dots.forEach((d) =>
+        d.addEventListener("click", () => show(Number(d.dataset.index)))
+      );
+    })();
+  </script>
 
   <div class="section-header">
     <h2>From the classroom</h2>
