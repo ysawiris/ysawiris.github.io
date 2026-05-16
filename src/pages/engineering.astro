@@ -206,11 +206,11 @@ const teaching: Project[] = [
     {openSource.map((p) => (
       <div class="card">
         {p.image && p.url && (
-          <a class="card-preview" href={p.url} aria-hidden="true" tabindex="-1">
+          <a class="card-preview" href={p.url} data-astro-reload aria-hidden="true" tabindex="-1">
             <img src={p.image.src} alt="" width={p.image.width} height={p.image.height} loading="lazy" />
           </a>
         )}
-        <h3>{p.url ? <a href={p.url}>{p.name}</a> : p.name}</h3>
+        <h3>{p.url ? <a href={p.url} data-astro-reload>{p.name}</a> : p.name}</h3>
         <div class="meta">
           {p.meta}
           {p.repo && (

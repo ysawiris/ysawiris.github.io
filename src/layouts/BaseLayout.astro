@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -14,6 +15,9 @@ const {
 } = Astro.props;
 
 const fullTitle = title === "Home" ? "Youssef Sawiris" : `${title} — Youssef Sawiris`;
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => pathname === href || pathname.startsWith(href);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -33,15 +37,16 @@ const fullTitle = title === "Home" ? "Youssef Sawiris" : `${title} — Youssef S
       href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter />
   </head>
   <body>
     <header class="site-header">
       <nav>
         <a href="/" class="brand">Youssef Sawiris</a>
         <div class="nav-links">
-          <a href="/engineering/">Engineering</a>
-          <a href="/teaching/">Teaching</a>
-          <a href="/about/">About</a>
+          <a href="/engineering/" aria-current={isActive("/engineering/") ? "page" : undefined}>Engineering</a>
+          <a href="/teaching/" aria-current={isActive("/teaching/") ? "page" : undefined}>Teaching</a>
+          <a href="/about/" aria-current={isActive("/about/") ? "page" : undefined}>About</a>
         </div>
       </nav>
     </header>
