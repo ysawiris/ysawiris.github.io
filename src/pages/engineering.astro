@@ -8,6 +8,7 @@ interface Project {
   meta: string;
   description: string;
   tags: string[];
+  image?: { src: string; width: number; height: number };
 }
 
 const featured: Project[] = [
@@ -72,6 +73,7 @@ const openSource: Project[] = [
     description:
       "Web app that tracks every visible satellite over Earth — 2D map with day/night terminator, 3D globe with NASA cloud-cover composites, observer-centered sky radar with pass predictions, and an onboard ride-along camera. Pure static frontend; orbital math runs entirely in the browser.",
     tags: ["javascript", "visualization", "live-demo"],
+    image: { src: "/previews/satellite-tracker.jpg", width: 1100, height: 618 },
   },
   {
     name: "lyric-generator",
@@ -81,6 +83,7 @@ const openSource: Project[] = [
     description:
       "Generate song lyrics by artist style. Pick artists, a theme, Markov order, and a rhyme scheme (AABB / ABAB / ABBA / free). Runs entirely in the browser; an optional server mode upgrades quality via Claude.",
     tags: ["javascript", "creative", "live-demo"],
+    image: { src: "/previews/lyric-generator.jpg", width: 568, height: 416 },
   },
   {
     name: "queued-up",
@@ -202,6 +205,11 @@ const teaching: Project[] = [
   <div class="cards">
     {openSource.map((p) => (
       <div class="card">
+        {p.image && p.url && (
+          <a class="card-preview" href={p.url} aria-hidden="true" tabindex="-1">
+            <img src={p.image.src} alt="" width={p.image.width} height={p.image.height} loading="lazy" />
+          </a>
+        )}
         <h3>{p.url ? <a href={p.url}>{p.name}</a> : p.name}</h3>
         <div class="meta">
           {p.meta}
